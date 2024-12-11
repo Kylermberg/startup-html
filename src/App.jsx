@@ -1,11 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import About from "./components/About";
 
 function App() {
     return (
-        <div>
-            <h1>My Startup App</h1>
-            <p>This is the starting point for my React application.</p>
-        </div>
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/about" element={<About />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
